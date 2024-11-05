@@ -1,3 +1,5 @@
+import ProductsPage from "./products/page";
+
 export default function Page() {
   return (
     <div>
@@ -18,12 +20,18 @@ export default function Page() {
         <div className="flex flex-col justify-center items-center w-full">
           {/* Logo and Search bar */}
           <div className="flex w-full justify-between">
-            <div className="w-1/5">LOGO Image</div>
-            <div className="w-3/5">Search Bar Here</div>
-            <div className="flex justify-end w-1/5">Cart Image</div>
+            <div className="w-1/5 p-4">
+              <div>LOGO Image</div>
+            </div>
+            <div className="w-3/5 p-4">
+              <div>Search Bar Here</div>
+            </div>
+            <div className="flex justify-end w-1/5 p-4">
+              <div>Cart Image</div>
+            </div>
           </div>
           {/* NAV */}
-          <ul className="flex justify-between list-none w-full">
+          <ul className="flex justify-between list-none w-full py-2">
             <li>Men</li>
             <li>Women</li>
             <li>Beauty</li>
@@ -34,7 +42,10 @@ export default function Page() {
             <li>placeholder</li>
           </ul>
         </div>
-        <h1>Hello, Home Page!</h1>
+        {/* Body */}
+        <div>
+          <ProductsPage />
+        </div>
       </div>
     </div>
   );
