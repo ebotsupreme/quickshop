@@ -18,7 +18,13 @@ export default function ProductCard({
   return (
     <div className="w-1/5 mx-2 my-6">
       <div>
-        <Image src={thumbnail} alt="product image" width={342} height={417} />
+        <Image
+          src={thumbnail}
+          alt="product image"
+          width={342}
+          height={417}
+          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+        />
       </div>
       <div>{title}</div>
       <div>${price}</div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ProductsPage from "./products/page";
 
 export default function Page() {
@@ -32,6 +33,9 @@ export default function Page() {
           </div>
           {/* NAV */}
           <ul className="flex justify-between list-none w-full py-2">
+            <li>
+              <Link href="/products">All</Link>
+            </li>
             <li>Men</li>
             <li>Women</li>
             <li>Beauty</li>
