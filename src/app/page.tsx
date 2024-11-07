@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ProductsPage from "./products/page";
+import { LINKS } from "./lib/constants";
 
 export default function Page() {
   return (
@@ -32,19 +33,13 @@ export default function Page() {
             </div>
           </div>
           {/* NAV */}
-          <ul className="flex justify-between list-none w-full py-2">
-            <li>
-              <Link href="/products">All</Link>
-            </li>
-            <li>Men</li>
-            <li>Women</li>
-            <li>Beauty</li>
-            <li>Fragrance</li>
-            <li>placeholder</li>
-            <li>placeholder</li>
-            <li>placeholder</li>
-            <li>placeholder</li>
-          </ul>
+          <div className="flex justify-between list-none w-full py-2">
+            {LINKS.map((link) => (
+              <Link key={link.name} href={link.href} className="">
+                <p className="">{link.name}</p>
+              </Link>
+            ))}
+          </div>
         </div>
         {/* Body */}
         <div>

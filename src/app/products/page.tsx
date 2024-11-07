@@ -5,6 +5,7 @@ import ProductCard from "../components/card/card";
 import { fetchProducts } from "../lib/data";
 import Pagination from "../ui/products/pagination";
 import { useSearchParams } from "next/navigation";
+import { Product, ProductResponse } from "../lib/definitions";
 
 export default function ProductsPage() {
   const searchParams = useSearchParams();
@@ -27,7 +28,6 @@ export default function ProductsPage() {
   if (!data) return <div>loading...</div>;
 
   console.log(data);
-  console.log(page);
   return (
     <>
       <div className="flex flex-wrap gap-20">

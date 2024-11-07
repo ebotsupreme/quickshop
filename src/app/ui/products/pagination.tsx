@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Pagination({
   totalPages,
@@ -12,7 +12,6 @@ export default function Pagination({
   setPage: (page: number) => void;
 }) {
   const pathName = usePathname();
-  const searchParams = useSearchParams();
   const router = useRouter();
 
   const handlePageChange = (newPage: number) => {

@@ -24,6 +24,7 @@ export default function ProductCard({
           width={342}
           height={417}
           style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          priority
         />
       </div>
       <div>{title}</div>
