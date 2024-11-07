@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navigation from "./ui/navigation/navigation";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navigation />
+        <main className="flex flex-col justify-center items-center max-w-screen-2xl mx-auto">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
