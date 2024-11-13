@@ -28,3 +28,5 @@ export const LINKS = [
     href: "/products/category/mobile-accessories",
   },
 ];
+
+export const LIMIT = 30;
