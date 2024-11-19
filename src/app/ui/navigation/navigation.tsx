@@ -1,4 +1,4 @@
-import { LINKS } from "@/app/lib/constants";
+import { LINKS, PRODUCT_CATEGORY_URL } from "@/app/lib/constants";
 import Link from "next/link";
 
 export default function Navigation() {
@@ -32,11 +32,26 @@ export default function Navigation() {
             </div>
           </div>
           {/* NAV */}
-          <div className="flex justify-between list-none w-full py-2">
+          <div className="flex justify-between list-none w-full py-2 relative ">
+            {" "}
             {LINKS.map((link) => (
-              <Link key={link.name} href={link.href} className="">
-                <p className="font-bold hover:underline">{link.name}</p>
-              </Link>
+              <div key={link.name} className="group">
+                <Link key={link.name} href={link.href}>
+                  <p className="font-bold hover:underline">{link.name}</p>
+                </Link>
+                {link.name !== "All" && (
+                  <div className="absolute left-0 top-2/3 w-full flex invisible group-hover:visible hover:visible flex-col bg-white z-10 py-4 px-2">
+                    <p className="font-bold underline pb-1">{link.name}</p>
+                    {link.dropdownContent?.map((item, index) => (
+                      <Link key={index} href={`${PRODUCT_CATEGORY_URL}${item}`}>
+                        <p className="hover:underline w-2/12">
+                          {item.replace("-", " ")}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
